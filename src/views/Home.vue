@@ -1,7 +1,9 @@
 <template>
   <div>
-    <app-button :to="{name: 'signin'}" size="large"></app-button>
-    <app-button :to="{name: 'signin'}" theme="danger"></app-button>
+    <app-button @click.prevent="clicked" title="Sign up for an account">
+      Create an account
+    </app-button>
+    <!-- <app-button :to="{name: 'signin'}" theme="danger" size="large" disabled></app-button> -->
   </div>
 </template>
 
@@ -11,6 +13,11 @@ export default {
   name: 'home',
   components: {
     AppButton
+  },
+  methods: {
+    clicked() {
+      console.log('clicked')
+    }
   }
 }
 </script>
