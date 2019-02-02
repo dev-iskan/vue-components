@@ -7,7 +7,13 @@
 
     <!-- <app-label for="email">E-mail</app-label>
     <app-input name="email" type="email" v-model="form.email" placeholder="text@text.com" required></app-input> -->
-    <app-textarea name="bio" v-model="form.bio" placeholder="Hello world"></app-textarea>
+    <!-- <app-textarea name="bio" v-model="form.bio" placeholder="Hello world"></app-textarea> -->
+
+
+    <!-- Modals -->
+    <app-sign-in-modal name="Alex"></app-sign-in-modal>
+
+    <a href="#" @click.prevent="openModal">Open modal</a>
   </div>
 </template>
 
@@ -15,14 +21,15 @@
 // import AppButton from '@/components/AppButton'
 // import AppInput from '@/components/AppInput'
 // import AppLabel from '@/components/AppLabel'
-import AppTextarea from '@/components/AppTextarea'
+import AppSignInModal from '@/components/modals/AppSignInModal'
 export default {
   name: 'home',
   components: {
     // AppButton,
     // AppInput,
     // AppLabel,
-    AppTextarea
+    // AppTextarea,
+    AppSignInModal
   },
   data () {
     return {
@@ -35,6 +42,13 @@ export default {
   methods: {
     clicked() {
       console.log('clicked')
+    },
+    openModal () {
+      this.$modal.show('signin', {name: 'Alex'})
+
+      // setTimeout(() => {
+      //   this.$modal.hide('signin')
+      // }, 2000)
     }
   }
 }
