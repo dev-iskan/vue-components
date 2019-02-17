@@ -11,9 +11,21 @@
 
 
     <!-- Modals -->
-    <app-sign-in-modal name="Alex"></app-sign-in-modal>
+    <!-- <app-sign-in-modal name="Alex"></app-sign-in-modal>
 
-    <a href="#" @click.prevent="openModal">Open modal</a>
+    <a href="#" @click.prevent="openModal">Open modal</a> -->
+
+    <!-- Tabs -->
+    <app-tabs>
+      <app-tab
+        name="Tab one"
+      >Tab content 1
+      </app-tab>
+      <app-tab
+        name="Tab two"
+      >Tab content 2
+      </app-tab>
+    </app-tabs>
   </div>
 </template>
 
@@ -21,7 +33,9 @@
 // import AppButton from '@/components/AppButton'
 // import AppInput from '@/components/AppInput'
 // import AppLabel from '@/components/AppLabel'
-import AppSignInModal from '@/components/modals/AppSignInModal'
+// import AppSignInModal from '@/components/modals/AppSignInModal'
+import AppTabs from '@/components/tabs/AppTabs'
+import AppTab from '@/components/tabs/AppTab'
 export default {
   name: 'home',
   components: {
@@ -29,7 +43,9 @@ export default {
     // AppInput,
     // AppLabel,
     // AppTextarea,
-    AppSignInModal
+    // AppSignInModal,
+    AppTabs,
+    AppTab
   },
   data () {
     return {
